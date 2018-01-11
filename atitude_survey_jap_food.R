@@ -1,7 +1,6 @@
 #
 # Read data from CSV file
 amano <- read.csv("amanodata.csv",header=T)
-
 # Example for cross tab
 
 gen_race <- table(amano$Gender, amano$Race)
@@ -79,7 +78,6 @@ barplot(q4_occ, col=heat.colors(nrow(q4_occ)),  beside=TRUE)
 
 chisq.test(q4_occ)
 
-#
 # q6 : I prefer consuming JP food to another food (answering in 1 to 5)
 
 t.test(amano$q6)
@@ -100,7 +98,7 @@ summary(res_lm)
 res_lm <- lm(q6 ~ n_q5 + n_occupation + sushi + teppanyaki + ramen + takoyaki)
 summary(res_lm)
 
-#
+
 # q8 : I believe JP food is safety
 
 t.test(q8)
@@ -117,7 +115,7 @@ summary(res_lm)
 res_lm <- lm(q8 ~ n_q5 + sushi + teppanyaki + ramen + takoyaki)
 summary(res_lm)
 
-#
+
 # Simple Correspondence analysis
 
 library ( MASS )
@@ -131,7 +129,7 @@ ev_corresp_q4_occ <- corresp_q4_occ$cor^2
 contrib <- round( 100 * ev_corresp_q4_occ / sum(ev_corresp_q4_occ), 1 )
 contrib
 
-#
+
 # Simple correspondece analysis for wage and q4
 
 q4_wage <- matrix(1:16,nrow=4,ncol=4)
@@ -234,8 +232,7 @@ biplot(res_pr,xlim=c(-0.2,0.2),ylim=c(-0.2,0.2))
 
 fix(res_pr)
 
-#
-# Cluster analysis
+############  Cluster analysis
 
 # q5 : Visit to Japan,  amano[,21]
 # q6 : Preference of JR
@@ -274,8 +271,6 @@ head(os)
 by(os[,1:8],os[,9],mean)
 table(os[,9])
 
-
-#
 # If "by" function faied, use this for calculation of mean in each cluster
 mean_clust <- matrix(1,nrow=4,ncol=8)
 for(i in 1:8){mean_clust[,i] <- tapply(os[,i],os[,9],mean)}
