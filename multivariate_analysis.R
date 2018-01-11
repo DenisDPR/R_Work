@@ -1,13 +1,12 @@
+# Load required library
 library(dplyr)
 library(tidyr)
 library(tidyverse)
 library(gridExtra)
 library(ggplot2)
-
 ###########   DATE SET   #########
 NO3 <-read.csv('TOGUCHI_NO3.csv', header = T, check.names = T)
 ECS <-read.csv('TOGUCHI_EC.csv', header = T, check.names = T)
-
 head(NO3,2)
 head(ECS,2)
 ################################################################################
