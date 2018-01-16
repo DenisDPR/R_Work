@@ -9,7 +9,8 @@ NO3 <-read.csv('TOGUCHI_NO3.csv', header = T, check.names = T)
 ECS <-read.csv('TOGUCHI_EC.csv', header = T, check.names = T)
 head(NO3,2)
 head(ECS,2)
-################################################################################
+##################################################################################
+# Example of Blocks schedule of crop growth 
 ##  BLOCK   vid      PLANT START       HARVEST START     END HARVEST           ##
 ##  C        v1       2017-07-18        2017-09-18         ?2017-11-27 (until) ##
 ##  D        v1       2017-05-26       2017-07-25          2017-10-16          ##
