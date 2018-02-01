@@ -192,7 +192,7 @@ TukeyHSD(aov(amano$q12 ~ amano$Race))
 # Factor analysis for q6 to q12
 # column number of q6 is 22
 # col num of q12 is 28
-#
+
 # q6 : Preference of JR
 # q7 : Preference of JF
 # q8 : Healthiness
@@ -221,7 +221,7 @@ par(mfrow = c(1, 1))
 
 fix(res_fa)
 
-#
+
 # Principal component analysis
 # Use prcomp. princomp is not good in some cases.
 
@@ -232,7 +232,7 @@ biplot(res_pr,xlim=c(-0.2,0.2),ylim=c(-0.2,0.2))
 
 fix(res_pr)
 
-############  Cluster analysis
+############  Cluster analysis ##########
 
 # q5 : Visit to Japan,  amano[,21]
 # q6 : Preference of JR
