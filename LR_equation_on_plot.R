@@ -8,12 +8,13 @@ library(tidyr)
 library("reshape2")
 library(lubridate) 
 
-
+## Data set to be used and alternated with ploted equations
 dat_1 <-read.csv('mikami_LRA.csv', header = T, check.names = T)
 dat_1 <-read.csv('togu_MR_c.csv', header = T, check.names = T)
 dat_1 <-read.csv('togu_MR_f.csv', header = T, check.names = T)
 head(dat_1)
 
+# Linear eqaution for a simple linear regression analysis
 lm_eqn <- function(df){
   m <- lm(y ~ x, df);
   eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
@@ -52,6 +53,8 @@ dat_1 <-read.csv('togu_MR_c.csv', header = T, check.names = T)
 #dat_1 <-read.csv('togu_MR_f.csv', header = T, check.names = T)
 
 head(dat_1)
+
+# Linear eqaution for multiple  regression analysis
 lm_eqn_2 <- function(df){
   m <- lm(Cum_Harvest ~ Cum_GDD + Cum_CO2, df);
   eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
